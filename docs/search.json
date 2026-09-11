@@ -1,5 +1,26 @@
 [
   {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "My first weeks in MDS\n\n\n\n\n\n\n\n\nSep 11, 2026\n\n\nXuan Jiang\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Xuan Jiang",
+    "section": "",
+    "text": "Hi, I’m Xuan! As you can see I love snowboarding! I worked in real estate before I got into the MDS program. I wish I could keep snowboarding till I’m 90 years old!(If I could live that long lol)"
+  },
+  {
+    "objectID": "posts/first-weeks/index.html",
+    "href": "posts/first-weeks/index.html",
+    "title": "My first weeks in MDS",
+    "section": "",
+    "text": "I am excited to come back to UBC! Everything felt familiar yet newer. There used to be a construction site near the bus loop and now it is turning into a new building.\nI am gald that I could come back to chat with the professors I know and meet new people.\nLast but not least, I am looking forward to become friends with all my classmates.\n\n\n\nMDS-CL Orientation"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -26,19 +47,5 @@
     "title": "About",
     "section": "Outside of data science:",
     "text": "Outside of data science:\nI am a certified snowboard instructor although I did not have the chance to join any snow school yet. Also, I enjoy learning new languages and so far I speak 4 languages."
-  },
-  {
-    "objectID": "posts/first-weeks/index.html",
-    "href": "posts/first-weeks/index.html",
-    "title": "My first weeks in MDS",
-    "section": "",
-    "text": "I am excited to come back to UBC! Everything felt familiar yet newer. There used to be a construction site near the bus loop and now it is turning into a new building.\nI am gald that I could come back to chat with the professors I know and meet new people.\nLast but not least, I am looking forward to become friends with all my classmates."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Xuan Jiang",
-    "section": "",
-    "text": "Hi, I’m Xuan! As you can see I love snowboarding! I worked in real estate before I got into the MDS program. I wish I could keep snowboarding till I’m 90 years old!(If I could live that long lol)"
   }
 ]

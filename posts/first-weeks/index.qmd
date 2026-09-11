@@ -1,6 +1,6 @@
 ---
 title: "My first weeks in MDS"
-author: "Your Name"
+author: "Xuan Jiang"
 date: 2026-09-11
 ---
 I am excited to come back to UBC! Everything felt familiar yet newer. There used
@@ -9,4 +9,5 @@ to be a construction site near the bus loop and now it is turning into a new bui
 I am gald that I could come back to chat with the professors I know and meet new people.
 
 Last but not least, I am looking forward to become friends with all my classmates.
-![MDS-CL Orientation.](orientation.jpg)
+
+![MDS-CL Orientation](orientation.JPG)
