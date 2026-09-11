@@ -1,7 +1,9 @@
 ---
 title: "Xuan Jiang"
+about:
+  template: jolla
+  image: images/profile.jpg
 ---
+Hi, I'm Xuan! As you can see I love snowboarding! I worked in real estate before I got into the MDS program. I wish I could keep snowboarding till I'm 90 years old!(If I could live that long lol)
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

@@ -2,4 +2,17 @@
 title: "About"
 ---
 
-About this site
+## Background:
+I majored in Economics and Statistics for my undergraduate in UBC. 
+Those are the subjects I enjoyed most since high school. 
+
+## Why data science: 
+I am in the MDS program because it is an extension to Statistics and
+I love finding reasons behind patterns.
+
+## Outside of data science: 
+I am a certified snowboard instructor although I did not have the chance
+to join any snow school yet. Also, I enjoy learning new languages and so
+far I speak 4 languages.
+
+

@@ -4,13 +4,41 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site"
+    "text": "I majored in Economics and Statistics for my undergraduate in UBC. Those are the subjects I enjoyed most since high school."
+  },
+  {
+    "objectID": "about.html#background",
+    "href": "about.html#background",
+    "title": "About",
+    "section": "",
+    "text": "I majored in Economics and Statistics for my undergraduate in UBC. Those are the subjects I enjoyed most since high school."
+  },
+  {
+    "objectID": "about.html#why-data-science",
+    "href": "about.html#why-data-science",
+    "title": "About",
+    "section": "Why data science:",
+    "text": "Why data science:\nI am in the MDS program because it is an extension to Statistics and I love finding reasons behind patterns."
+  },
+  {
+    "objectID": "about.html#outside-of-data-science",
+    "href": "about.html#outside-of-data-science",
+    "title": "About",
+    "section": "Outside of data science:",
+    "text": "Outside of data science:\nI am a certified snowboard instructor although I did not have the chance to join any snow school yet. Also, I enjoy learning new languages and so far I speak 4 languages."
+  },
+  {
+    "objectID": "posts/first-weeks/index.html",
+    "href": "posts/first-weeks/index.html",
+    "title": "My first weeks in MDS",
+    "section": "",
+    "text": "I am excited to come back to UBC! Everything felt familiar yet newer. There used to be a construction site near the bus loop and now it is turning into a new building.\nI am gald that I could come back to chat with the professors I know and meet new people.\nLast but not least, I am looking forward to become friends with all my classmates."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Xuan Jiang",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Hi, I’m Xuan! As you can see I love snowboarding! I worked in real estate before I got into the MDS program. I wish I could keep snowboarding till I’m 90 years old!(If I could live that long lol)"
   }
 ]
