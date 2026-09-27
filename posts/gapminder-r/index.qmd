@@ -4,7 +4,7 @@ author: "Xuan Jiang"
 date: 2026-09-21
 ---
 
-Data: \[Gapminder\] (www.gapminder.org)
+Data: [Gapminder] (www.gapminder.org)
 
 ```{r}
 #| message: false
