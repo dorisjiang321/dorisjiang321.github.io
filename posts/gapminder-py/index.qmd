@@ -3,7 +3,7 @@ title: "Gapminder Analysis in Python"
 author: "Xuan Jiang"
 date: 2026-09-26
 ---
-Data: [Gapminder] (www.gapminder.org)
+Data Source: [Gapminder] (www.gapminder.org)
 
 ```{python}
 #| message: false
