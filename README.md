@@ -37,4 +37,4 @@ to launch a local live-reloading preview server.
 
 # Data Source
 
-Gapminder data comes from the [Gapminder](https://www.gapminder.org)
+Gapminder data comes from the [Gapminder] https://www.gapminder.org
