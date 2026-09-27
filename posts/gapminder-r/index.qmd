@@ -1,0 +1,68 @@
+---
+title: "Gapminder Analysis in R"
+author: "Xuan Jiang"
+date: 2026-09-21
+---
+
+Data: \[Gapminder\] (www.gapminder.org)
+
+```{r}
+#| message: false
+#| warning: false
+# Import Dataframe
+library(gapminder)
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+
+gapminder_subset <- subset(gapminder, country %in% c("Canada", "Japan"))
+```
+
+```{r}
+# Calculate and select total GDP of Canada and Japan
+gapminder_subset <- gapminder_subset |>
+  mutate(total_gdp = gdpPercap * pop)
+
+gdp_summary <- gapminder_subset |>
+  group_by(country, year) |>
+  summarise(total_gdp = sum(total_gdp), .groups = "drop") |>
+  mutate(total_gdp_trillion = total_gdp / 10^12) 
+```
+
+```{r}
+#| label: fig-canada-japan-gdp
+#| fig-cap: "Total GDP (in trillions USD) of Canada and Japan over time."
+# Plot Total GDP of Canada and Japan over time
+ggplot(gdp_summary, aes(x = year, y = total_gdp_trillion, color = country)) +
+  geom_line(linewidth = 1) +
+  geom_point() +
+  labs(
+    x = "Year",
+    y = "Total GDP (trillions USD)",
+    color = "Country",
+    title = "figure 1: \nTotal GDP: Canada vs. Japan"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+#| label: fig-canada-japan-gdppercap
+#| fig-cap: "GDP per capita of Canada and Japan over time."
+# Plot GDP per capita of Canada and Japan over time
+ggplot(gapminder_subset, aes(x = year, y = gdpPercap, color = country)) +
+  geom_line(linewidth = 1) +
+  geom_point() +
+  labs(
+    x = "Year",
+    y = "GDP per Capita",
+    color = "Country",
+    title = "figure 2: \nGDP per Capita: Canada vs. Japan"
+  ) +
+  theme_minimal()
+```
+
+I used gapminder dataset to compare the economic growth between Canada and Japan.
+
+First I multiplied the GDP per-capita by population to obtain Canada and Japan's total GDP in trillion USD. Then I visualized the comparison of total GDP and GDP per-capita of both countries over years. From figure 1 , I found Japan's total GDP has been growing rapidly and always greater than Canada's total GDP.
+
+However, this does not imply that the economy in Japan grew faster than Canada once I look into figure 2: the comparison of GDP per capita. Both countries had similar GDP per-capita and Canada's GDP per-capita overtook Japan's for most of the time.

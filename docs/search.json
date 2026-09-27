@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "My first weeks in MDS\n\n\n\n\n\n\n\n\nSep 11, 2026\n\n\nXuan Jiang\n\n\n\n\n\nNo matching items"
+    "text": "Gapminder Analysis in Python\n\n\n\n\n\n\n\n\nSep 26, 2026\n\n\nXuan Jiang\n\n\n\n\n\n\n\n\n\n\n\n\nGapminder Analysis in R\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nXuan Jiang\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 11, 2026\n\n\nXuan Jiang\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -19,6 +19,20 @@
     "title": "My first weeks in MDS",
     "section": "",
     "text": "I am excited to come back to UBC! Everything felt familiar yet newer. There used to be a construction site near the bus loop and now it is turning into a new building.\nI am gald that I could come back to chat with the professors I know and meet new people.\nLast but not least, I am looking forward to become friends with all my classmates.\n\n\n\nMDS-CL Orientation"
+  },
+  {
+    "objectID": "posts/gapminder-py/index.html",
+    "href": "posts/gapminder-py/index.html",
+    "title": "Gapminder Analysis in Python",
+    "section": "",
+    "text": "Data: [Gapminder] (www.gapminder.org)\n\n#Import Dataframe\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\ngapminder = pd.read_csv(\"https://raw.githubusercontent.com/jennybc/gapminder/master/data-raw/08_gap-every-five-years.tsv\", sep=\"\\t\")\ngapminder_subset = gapminder[(gapminder[\"country\"] == \"Canada\") | (gapminder[\"country\"] == \"Japan\")]\n\n\n# Calculate and select total GDP of Canada and Japan\ngapminder_subset = gapminder_subset.copy()\ngapminder_subset[\"total_gdp\"] = gapminder_subset[\"gdpPercap\"] * gapminder_subset[\"pop\"]\n\ngdp_summary = (\n    gapminder_subset\n    .groupby([\"country\", \"year\"], as_index=False)[\"total_gdp\"]\n    .sum()\n)\ngdp_summary[\"total_gdp_trillion\"] = gdp_summary[\"total_gdp\"] / 10**12\n\n\n# Plot Total GDP of Canada and Japan over time\nfig, ax = plt.subplots()\n\nfor country, group in gdp_summary.groupby(\"country\"):\n    ax.plot(group[\"year\"], group[\"total_gdp_trillion\"], marker=\"o\", linewidth=2, label=country)\n\nax.set_xlabel(\"Year\")\nax.set_ylabel(\"Total GDP (trillions USD)\")\nax.set_title(\"figure 1: \\nTotal GDP: Canada vs. Japan\")\nax.legend(title=\"Country\")\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Total GDP (in trillions USD) of Canada and Japan over time.\n\n\n\n\n\n\n# Plot GDP per capita of Canada and Japan over time\nfig, ax = plt.subplots()\n\nfor country, group in gapminder_subset.groupby(\"country\"):\n    ax.plot(group[\"year\"], group[\"gdpPercap\"], marker=\"o\", linewidth=2, label=country)\n\nax.set_xlabel(\"Year\")\nax.set_ylabel(\"GDP per Capita\")\nax.set_title(\"figure 2: \\nGDP per Capita: Canada vs. Japan\")\nax.legend(title=\"Country\")\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\nFigure 2: GDP per capita of Canada and Japan over time.\n\n\n\n\n\nI used gapminder dataset to compare the economic growth between Canada and Japan.\nFirst I multiplied the GDP per-capita by population to obtain Canada and Japan’s total GDP in trillion USD. Then I visualized the comparison of total GDP and GDP per-capita of both countries over years. From figure 1 , I found Japan’s total GDP has been growing rapidly and always greater than Canada’s total GDP.\nHowever, this does not imply that the economy in Japan grew faster than Canada once I look into figure 2: the comparison of GDP per capita. Both countries had similar GDP per-capita and Canada’s GDP per-capita overtook Japan’s for most of the time."
+  },
+  {
+    "objectID": "posts/gapminder-r/index.html",
+    "href": "posts/gapminder-r/index.html",
+    "title": "Gapminder Analysis in R",
+    "section": "",
+    "text": "Data: [Gapminder] (www.gapminder.org)\n\n# Import Dataframe\nlibrary(gapminder)\nlibrary(tidyverse)\nlibrary(dplyr)\nlibrary(ggplot2)\n\ngapminder_subset &lt;- subset(gapminder, country %in% c(\"Canada\", \"Japan\"))\n\n\n# Calculate and select total GDP of Canada and Japan\ngapminder_subset &lt;- gapminder_subset |&gt;\n  mutate(total_gdp = gdpPercap * pop)\n\ngdp_summary &lt;- gapminder_subset |&gt;\n  group_by(country, year) |&gt;\n  summarise(total_gdp = sum(total_gdp), .groups = \"drop\") |&gt;\n  mutate(total_gdp_trillion = total_gdp / 10^12) \n\n\n# Plot Total GDP of Canada and Japan over time\nggplot(gdp_summary, aes(x = year, y = total_gdp_trillion, color = country)) +\n  geom_line(linewidth = 1) +\n  geom_point() +\n  labs(\n    x = \"Year\",\n    y = \"Total GDP (trillions USD)\",\n    color = \"Country\",\n    title = \"figure 1: \\nTotal GDP: Canada vs. Japan\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\nFigure 1: Total GDP (in trillions USD) of Canada and Japan over time.\n\n\n\n\n\n\n# Plot GDP per capita of Canada and Japan over time\nggplot(gapminder_subset, aes(x = year, y = gdpPercap, color = country)) +\n  geom_line(linewidth = 1) +\n  geom_point() +\n  labs(\n    x = \"Year\",\n    y = \"GDP per Capita\",\n    color = \"Country\",\n    title = \"figure 2: \\nGDP per Capita: Canada vs. Japan\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\nFigure 2: GDP per capita of Canada and Japan over time.\n\n\n\n\n\nI used gapminder dataset to compare the economic growth between Canada and Japan.\nFirst I multiplied the GDP per-capita by population to obtain Canada and Japan’s total GDP in trillion USD. Then I visualized the comparison of total GDP and GDP per-capita of both countries over years. From figure 1 , I found Japan’s total GDP has been growing rapidly and always greater than Canada’s total GDP.\nHowever, this does not imply that the economy in Japan grew faster than Canada once I look into figure 2: the comparison of GDP per capita. Both countries had similar GDP per-capita and Canada’s GDP per-capita overtook Japan’s for most of the time."
   },
   {
     "objectID": "about.html",
